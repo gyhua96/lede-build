@@ -1,0 +1,5 @@
+#/bin/bash
+# reset kernel version
+echo 'LINUX_VERSION-6.6 = .90
+      LINUX_KERNEL_HASH-6.6.90 = ff856748671629c1fefef219099e0b4b81131c2d325e768cb0806e204157014e
+' > include/kernel-6.6
