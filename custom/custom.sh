@@ -1,5 +1,12 @@
 #/bin/bash
-# reset kernel version
-echo 'LINUX_VERSION-6.6 = .90
-      LINUX_KERNEL_HASH-6.6.90 = ff856748671629c1fefef219099e0b4b81131c2d325e768cb0806e204157014e
-' > include/kernel-6.6
+
+# set default lan ip
+sed -i 's/192.168.1.1/10.0.0.1/g' package/base-files/files/bin/config_generate
+
+# add passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall-packages package/openwrt-passwall
+git clone --depth=1 https://github.com/xiaorouji/openwrt-passwall package/luci-app-passwall
+
+# add sync dial
+git clone https://github.com/kiddin9/luci-app-syncdial package/luci-app-syncdial
+
